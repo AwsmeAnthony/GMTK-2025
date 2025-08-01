@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TalkingResource" load_steps=2 format=3 uid="uid://c3cujx755rak1"]
+
+[ext_resource type="Script" path="res://spice/dialog_res.gd" id="1_wdn2g"]
+
+[resource]
+script = ExtResource("1_wdn2g")
+text = PackedStringArray("", "They are Here", "END")
+timing = PackedInt32Array(4, 3, 1)

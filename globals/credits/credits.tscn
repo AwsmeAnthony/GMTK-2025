@@ -1,0 +1,161 @@
+[gd_scene load_steps=9 format=3 uid="uid://8ipf7mlotla2"]
+
+[ext_resource type="AudioStream" uid="uid://dswe3doqajlra" path="res://sfx/static.mp3" id="1_5n7fu"]
+[ext_resource type="Script" path="res://globals/credits/credits.gd" id="1_jhwq3"]
+[ext_resource type="AudioStream" uid="uid://4aaxhs05bo7q" path="res://sfx/thump.mp3" id="2_85jgl"]
+
+[sub_resource type="SystemFont" id="SystemFont_llvji"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c8lal"]
+line_spacing = 11.745
+font = SubResource("SystemFont_llvji")
+font_size = 51
+
+[sub_resource type="Animation" id="Animation_u1x1l"]
+resource_name = "scroll"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333, 14.9184),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 652), Vector2(1, -1820.76)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0999, 1.2654, 2.4975, 3.3633, 3.8295, 4.5288, 6.4269, 7.5591, 9.1242, 11.322, 12.0546),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false, true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_5fpkj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 652)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ub54l"]
+_data = {
+"RESET": SubResource("Animation_5fpkj"),
+"scroll": SubResource("Animation_u1x1l")
+}
+
+[node name="credits" type="CanvasLayer"]
+script = ExtResource("1_jhwq3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 5720.48)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 652.0
+offset_bottom = 5724.48
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game
+AwsmeAnthony
+
+
+
+Music 
+Ondrosik on Pixabay
+
+
+
+
+
+
+SFX
+FreeSoundCommunity on Pixabay
+
+
+
+
+
+One shader
+mrussodev on GDshaders
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+...It will find you 
+hide "
+label_settings = SubResource("LabelSettings_c8lal")
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_5n7fu")
+volume_db = -8.0
+autoplay = true
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_85jgl")
+volume_db = 10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ub54l")
+}
+autoplay = "scroll"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

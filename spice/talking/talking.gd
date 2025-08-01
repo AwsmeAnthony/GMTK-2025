@@ -13,6 +13,8 @@ var ending : bool = false
 var dialog_reses : Array = [
 	preload("res://spice/dialog1.tres")
 	,preload("res://spice/dialog2.tres")
+	,preload("res://spice/dialog3.tres")
+	,preload("res://spice/dialog4.tres")
 ]
 
 

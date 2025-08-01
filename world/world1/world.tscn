@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ckpfpf1n6kahn" path="res://world/flag.tscn" id="4_ublwp"]
 [ext_resource type="PackedScene" uid="uid://b4738ykyekkjn" path="res://world/world2/world_2.tscn" id="6_ft0a6"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0k2bn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wgu15"]
 texture = ExtResource("1_ypvh4")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -16,9 +16,9 @@ texture_region_size = Vector2i(128, 128)
 
 [sub_resource type="TileSet" id="TileSet_4orf1"]
 tile_size = Vector2i(128, 128)
-sources/0 = SubResource("TileSetAtlasSource_0k2bn")
+sources/0 = SubResource("TileSetAtlasSource_wgu15")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rhfqd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0lhyk"]
 texture = ExtResource("2_5rm75")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -26,13 +26,13 @@ texture_region_size = Vector2i(128, 128)
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, 64, -64, 64)
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_n304q"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_llibp"]
 
 [sub_resource type="TileSet" id="TileSet_mmu1r"]
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_rhfqd")
-sources/1 = SubResource("TileSetScenesCollectionSource_n304q")
+sources/0 = SubResource("TileSetAtlasSource_0lhyk")
+sources/1 = SubResource("TileSetScenesCollectionSource_llibp")
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_85vur"]
 rough = true
