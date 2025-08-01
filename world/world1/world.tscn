@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=4 uid="uid://cc5k8n0clft54"]
+[gd_scene load_steps=14 format=4 uid="uid://cc5k8n0clft54"]
 
 [ext_resource type="PackedScene" uid="uid://cagi7hebnpewu" path="res://ent/player/player.tscn" id="1_nym8q"]
+[ext_resource type="Script" path="res://world/world1/world1.gd" id="1_rr4or"]
 [ext_resource type="Texture2D" uid="uid://c8x4xn2bl14oa" path="res://world/tileset2.png" id="1_ypvh4"]
 [ext_resource type="Texture2D" uid="uid://0eqo6i1rmfku" path="res://world/tileset.png" id="2_5rm75"]
 [ext_resource type="Texture2D" uid="uid://cb04j0d6puqxs" path="res://click and drag.png" id="3_c31sq"]
@@ -38,6 +39,7 @@ rough = true
 bounce = 0.2
 
 [node name="world" type="Node2D"]
+script = ExtResource("1_rr4or")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 modulate = Color(0.306923, 0.306923, 0.306923, 1)

@@ -1,4 +1,5 @@
-
+some shaders by 
+mrussodev
 
 ----------Fisrt Cycle----------
 Normal 
@@ -10,8 +11,8 @@ Normal
 ----------Seccond Cycle----------
 Normal 
 Visaul "Glitches"
-Visaul "Glitches" Eyes
-
+Visaul "Glitches" Eyes  
+	
 -Try to say quiet, Dont let them know you know, Dont touch them-
 
 ----------Third Cycle----------

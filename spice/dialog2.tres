@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TalkingResource" load_steps=2 format=3 uid="uid://ghpmmq2css6e"]
+
+[ext_resource type="Script" path="res://spice/dialog_res.gd" id="1_4uni1"]
+
+[resource]
+script = ExtResource("1_4uni1")
+text = PackedStringArray("Stay Quiet", "Dont let them know you know", "Stay away from them", "END")
+timing = PackedInt32Array(1, 2, 1, 1)

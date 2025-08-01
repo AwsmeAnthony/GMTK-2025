@@ -10,8 +10,14 @@ extends Control
 
 var index : int = 0
 var ending : bool = false
+var dialog_reses : Array = [
+	preload("res://spice/dialog1.tres")
+	,preload("res://spice/dialog2.tres")
+]
+
 
 func _ready() -> void:
+	recource = dialog_reses[Global.world_type]
 	Music.volume_db = -60
 
 func _physics_process(delta: float) -> void:
@@ -44,4 +50,6 @@ func _on_timer_timeout() -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if Global.world_type < 5:
+		Global.world_type += 1
 	get_tree().change_scene_to_file("res://world/world1/world.tscn")

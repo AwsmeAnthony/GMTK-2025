@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://j6jqk6oaj5et"]
+
+[node name="player throw" type="Node2D"]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
