@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://8k7bo3btx1j4"]
+
+[ext_resource type="Script" path="res://changes/bug/bug.gd" id="1_f1jmo"]
+[ext_resource type="Texture2D" uid="uid://nb0x3mkf38wm" path="res://changes/bug/bug.png" id="2_ahnn7"]
+[ext_resource type="PackedScene" uid="uid://d2twtwcjvd27y" path="res://changes/spike/spike.tscn" id="3_fkjgw"]
+
+[node name="bug" type="CharacterBody2D"]
+script = ExtResource("1_f1jmo")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_ahnn7")
+
+[node name="spike" parent="." instance=ExtResource("3_fkjgw")]
+visible = false

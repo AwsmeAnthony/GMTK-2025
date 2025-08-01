@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cagi7hebnpewu"]
+[gd_scene load_steps=7 format=3 uid="uid://cagi7hebnpewu"]
 
 [ext_resource type="Script" path="res://ent/player/player.gd" id="1_5txug"]
 [ext_resource type="Texture2D" uid="uid://bbt7kijr7rcdv" path="res://ent/player/player.png" id="1_w3owe"]
+[ext_resource type="AudioStream" uid="uid://cxi0yhxhkuwvd" path="res://sfx/bounce.mp3" id="3_h4qdt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e4n5p"]
 radius = 61.2944
@@ -24,6 +25,7 @@ texture = ExtResource("1_w3owe")
 shape = SubResource("CircleShape2D_e4n5p")
 
 [node name="direction" type="Line2D" parent="."]
+visible = false
 points = PackedVector2Array(0, 0, 96, 0)
 width_curve = SubResource("Curve_jbi30")
 default_color = Color(1, 0, 0, 1)
@@ -34,3 +36,6 @@ end_cap_mode = 2
 position = Vector2(0, 64)
 shape = SubResource("RectangleShape2D_7yg2a")
 target_position = Vector2(0, 3)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_h4qdt")

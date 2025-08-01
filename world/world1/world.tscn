@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://cc5k8n0clft54"]
+[gd_scene load_steps=13 format=4 uid="uid://cc5k8n0clft54"]
 
 [ext_resource type="PackedScene" uid="uid://cagi7hebnpewu" path="res://ent/player/player.tscn" id="1_nym8q"]
 [ext_resource type="Texture2D" uid="uid://c8x4xn2bl14oa" path="res://world/tileset2.png" id="1_ypvh4"]
 [ext_resource type="Texture2D" uid="uid://0eqo6i1rmfku" path="res://world/tileset.png" id="2_5rm75"]
 [ext_resource type="Texture2D" uid="uid://cb04j0d6puqxs" path="res://click and drag.png" id="3_c31sq"]
 [ext_resource type="PackedScene" uid="uid://ckpfpf1n6kahn" path="res://world/flag.tscn" id="4_ublwp"]
+[ext_resource type="PackedScene" uid="uid://b4738ykyekkjn" path="res://world/world2/world_2.tscn" id="6_ft0a6"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lchjo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0k2bn"]
 texture = ExtResource("1_ypvh4")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -14,9 +15,9 @@ texture_region_size = Vector2i(128, 128)
 
 [sub_resource type="TileSet" id="TileSet_4orf1"]
 tile_size = Vector2i(128, 128)
-sources/0 = SubResource("TileSetAtlasSource_lchjo")
+sources/0 = SubResource("TileSetAtlasSource_0k2bn")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q53u8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rhfqd"]
 texture = ExtResource("2_5rm75")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -24,10 +25,13 @@ texture_region_size = Vector2i(128, 128)
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, 64, -64, 64)
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_n304q"]
+
 [sub_resource type="TileSet" id="TileSet_mmu1r"]
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_q53u8")
+sources/0 = SubResource("TileSetAtlasSource_rhfqd")
+sources/1 = SubResource("TileSetScenesCollectionSource_n304q")
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_85vur"]
 rough = true
@@ -59,3 +63,4 @@ zoom = Vector2(0.45, 0.45)
 
 [node name="flag" parent="." instance=ExtResource("4_ublwp")]
 position = Vector2(1728, 701)
+next_world = ExtResource("6_ft0a6")

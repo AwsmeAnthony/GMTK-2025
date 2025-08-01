@@ -3,6 +3,7 @@ class_name Player
 
 @onready var direction: Line2D = $direction
 @onready var down: ShapeCast2D = $down
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _physics_process(delta: float) -> void:
@@ -24,3 +25,4 @@ func _shoot():
 		return
 	if Input.is_action_just_released("aim"):
 		linear_velocity = (get_global_mouse_position() - global_position) * 1.5
+		audio_stream_player.play()
