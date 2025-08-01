@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TalkingResource" load_steps=2 format=3 uid="uid://cdtcjq7f1come"]
+
+[ext_resource type="Script" path="res://spice/dialog_res.gd" id="1_c8s5y"]
+
+[resource]
+script = ExtResource("1_c8s5y")
+text = PackedStringArray("Trust No One", "I don\'t have time", "Stay Safe", "END")
+timing = PackedInt32Array(1, 1, 1, 2)

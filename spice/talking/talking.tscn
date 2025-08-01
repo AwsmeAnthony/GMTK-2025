@@ -1,0 +1,195 @@
+[gd_scene load_steps=15 format=3 uid="uid://cwtkw8r0sym6s"]
+
+[ext_resource type="Script" path="res://spice/talking/talking.gd" id="1_2hj8g"]
+[ext_resource type="AudioStream" uid="uid://dswe3doqajlra" path="res://sfx/static.mp3" id="1_7afx3"]
+[ext_resource type="Resource" uid="uid://cdtcjq7f1come" path="res://spice/dialog1.tres" id="2_k4efi"]
+
+[sub_resource type="Gradient" id="Gradient_p3pso"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u3uhd"]
+noise_type = 4
+seed = -1081133081
+frequency = 0.1585
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_m7ndj"]
+color_ramp = SubResource("Gradient_p3pso")
+noise = SubResource("FastNoiseLite_u3uhd")
+
+[sub_resource type="FontFile" id="FontFile_fdfvn"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/231/0/ascent = 0.0
+cache/0/231/0/descent = 0.0
+cache/0/231/0/underline_position = 0.0
+cache/0/231/0/underline_thickness = 0.0
+cache/0/231/0/scale = 1.0
+cache/0/196/0/ascent = 0.0
+cache/0/196/0/descent = 0.0
+cache/0/196/0/underline_position = 0.0
+cache/0/196/0/underline_thickness = 0.0
+cache/0/196/0/scale = 1.0
+cache/0/166/0/ascent = 0.0
+cache/0/166/0/descent = 0.0
+cache/0/166/0/underline_position = 0.0
+cache/0/166/0/underline_thickness = 0.0
+cache/0/166/0/scale = 1.0
+cache/0/146/0/ascent = 0.0
+cache/0/146/0/descent = 0.0
+cache/0/146/0/underline_position = 0.0
+cache/0/146/0/underline_thickness = 0.0
+cache/0/146/0/scale = 1.0
+cache/0/136/0/ascent = 0.0
+cache/0/136/0/descent = 0.0
+cache/0/136/0/underline_position = 0.0
+cache/0/136/0/underline_thickness = 0.0
+cache/0/136/0/scale = 1.0
+cache/0/126/0/ascent = 0.0
+cache/0/126/0/descent = 0.0
+cache/0/126/0/underline_position = 0.0
+cache/0/126/0/underline_thickness = 0.0
+cache/0/126/0/scale = 1.0
+cache/0/116/0/ascent = 0.0
+cache/0/116/0/descent = 0.0
+cache/0/116/0/underline_position = 0.0
+cache/0/116/0/underline_thickness = 0.0
+cache/0/116/0/scale = 1.0
+cache/0/121/0/ascent = 0.0
+cache/0/121/0/descent = 0.0
+cache/0/121/0/underline_position = 0.0
+cache/0/121/0/underline_thickness = 0.0
+cache/0/121/0/scale = 1.0
+cache/0/131/0/ascent = 0.0
+cache/0/131/0/descent = 0.0
+cache/0/131/0/underline_position = 0.0
+cache/0/131/0/underline_thickness = 0.0
+cache/0/131/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_qv6sa"]
+font = SubResource("FontFile_fdfvn")
+font_size = 131
+shadow_size = 26
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_nqdtp"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ixgf3"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2ds3a"]
+color_ramp = SubResource("Gradient_nqdtp")
+noise = SubResource("FastNoiseLite_ixgf3")
+
+[sub_resource type="Animation" id="Animation_kbgc7"]
+resource_name = "end"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("NoiseTexture2D_2ds3a")]
+}
+
+[sub_resource type="Animation" id="Animation_vyw7x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("NoiseTexture2D_m7ndj")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xxobp"]
+_data = {
+"RESET": SubResource("Animation_vyw7x"),
+"end": SubResource("Animation_kbgc7")
+}
+
+[node name="Talking" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2hj8g")
+recource = ExtResource("2_k4efi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_7afx3")
+volume_db = -8.0
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("NoiseTexture2D_m7ndj")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_qv6sa")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xxobp")
+}
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

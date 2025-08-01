@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dcgthxkgfayin"]
+[gd_scene load_steps=14 format=4 uid="uid://dcgthxkgfayin"]
 
 [ext_resource type="Texture2D" uid="uid://c8x4xn2bl14oa" path="res://world/tileset2.png" id="1_uxi8k"]
 [ext_resource type="Texture2D" uid="uid://0eqo6i1rmfku" path="res://world/tileset.png" id="2_mod3f"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d2twtwcjvd27y" path="res://changes/spike/spike.tscn" id="3_unbqu"]
 [ext_resource type="PackedScene" uid="uid://cagi7hebnpewu" path="res://ent/player/player.tscn" id="4_penhb"]
 [ext_resource type="PackedScene" uid="uid://ckpfpf1n6kahn" path="res://world/flag.tscn" id="5_a54gc"]
+[ext_resource type="PackedScene" uid="uid://cwtkw8r0sym6s" path="res://spice/talking/talking.tscn" id="5_kx68p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b7aal"]
 texture = ExtResource("1_uxi8k")
@@ -51,6 +52,7 @@ tile_set = SubResource("TileSet_s1nak")
 
 [node name="flag" parent="." instance=ExtResource("5_a54gc")]
 position = Vector2(1711, 703)
+next_world = ExtResource("5_kx68p")
 
 [node name="bug" parent="." instance=ExtResource("2_tn4u7")]
 position = Vector2(963, 707)
